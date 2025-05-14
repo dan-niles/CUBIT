@@ -539,8 +539,7 @@ protected:
 
 /// A case-insensitive version of less for comparing names of tables,
 /// columns, and other resources.
-struct lessi :
-    public std::binary_function< const char*, const char*, bool > {
+struct lessi {
     bool operator()(const char* x, const char* y) const {
         return (x && y ? stricmp(x, y) < 0 : false);
     }
